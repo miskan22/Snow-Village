@@ -1,0 +1,179 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://jpg/game scene 4.jpeg" type="Texture" id=1]
+[ext_resource path="res://music/TRG_Banks_-_14_-_Christmas_Town.mp3" type="AudioStream" id=2]
+[ext_resource path="res://scene/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://script/MovingWallUpDown.gd" type="Script" id=4]
+[ext_resource path="res://scene/Pies.tscn" type="PackedScene" id=5]
+[ext_resource path="res://script/World3.gd" type="Script" id=7]
+[ext_resource path="res://scene/Portal.tscn" type="PackedScene" id=8]
+[ext_resource path="res://png/snow.png" type="Texture" id=9]
+[ext_resource path="res://scene/StoryBox.tscn" type="PackedScene" id=10]
+[ext_resource path="res://script/Person.gd" type="Script" id=11]
+[ext_resource path="res://Rudolph.png" type="Texture" id=12]
+[ext_resource path="res://TileSet.tres" type="TileSet" id=13]
+[ext_resource path="res://Tile/tile_0518.png" type="Texture" id=14]
+[ext_resource path="res://script/MovingWallSlide.gd" type="Script" id=15]
+[ext_resource path="res://scene/MoveE.tscn" type="PackedScene" id=17]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 5.25, 610 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 40, 8.25 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 32, 3 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 32, 32 )
+
+[sub_resource type="CanvasItemMaterial" id=9]
+
+[sub_resource type="ParticlesMaterial" id=10]
+emission_shape = 1
+emission_sphere_radius = 100.0
+flag_disable_z = true
+gravity = Vector3( 0, 100, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+anim_speed = 0.5
+
+[node name="World3" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="Background3" type="Sprite" parent="."]
+position = Vector2( 704, 480 )
+scale = Vector2( 2.375, 2.00992 )
+texture = ExtResource( 1 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+autoplay = true
+
+[node name="Portal" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1888, 431 )
+next_world = "res://scene/World4.tscn"
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 13 )
+cell_size = Vector2( 32, 32 )
+cell_custom_transform = Transform2D( 64, 64, 0, 64, 0, 0 )
+format = 1
+tile_data = PoolIntArray( 327714, 2, 0, 327715, 2, 0, 327716, 2, 0, 327717, 2, 0, 327718, 2, 0, 327719, 2, 0, 393250, 59, 0, 393251, 59, 0, 393252, 58, 0, 393253, 58, 0, 393254, 58, 0, 393255, 59, 0, 524313, 8, 0, 524314, 8, 0, 524315, 8, 0, 524316, 8, 0, 524317, 8, 0, 655402, 33, 0, 655403, 33, 0, 655404, 15, 0, 720909, 8, 0, 851956, 15, 0, 851957, 15, 0, 851958, 15, 0, 786445, 62, 0, 786446, 33, 0, 786447, 15, 0, 786448, 15, 0, 786449, 33, 0, 786462, 1610612749, 0, 786463, 1610612744, 0, 786464, 1610612748, 0, 917497, 15, 0, 917498, 15, 0, 917499, 15, 0, 851978, 8, 0, 852004, 23, 0, 852005, 8, 0, 852006, 8, 0, 852007, 25, 0, 983025, 33, 0, 983026, 33, 0, 917513, 7, 0, 917522, 1073741857, 0, 917523, 1610612751, 0, 1048563, 33, 0, 1048573, 8, 0, 1048574, 8, 0, 1048575, 8, 0, 983040, 8, 0, 983041, 8, 0, 983042, 8, 0, 983043, 8, 0, 983044, 8, 0, 983045, 8, 0, 983046, 8, 0, 983047, 8, 0, 983048, 8, 0, 983049, 7, 0, 983058, 1073741887, 0, 983059, 63, 0, 983088, 1610612778, 0, 983089, 1610612778, 0, 983090, 1610612778, 0, 983091, 1610612778, 0, 983092, 1610612778, 0, 983093, 1610612778, 0, 983094, 1610612778, 0, 983095, 1610612778, 0, 983096, 1610612778, 0, 983097, 1610612778, 0, 983098, 1610612778, 0, 983099, 1610612778, 0, 1114100, 12, 0, 1114101, 8, 0, 1114102, 8, 0, 1114103, 13, 0, 1114109, 51, 0, 1114110, 51, 0, 1114111, 51, 0, 1048576, 51, 0, 1048577, 51, 0, 1048578, 51, 0, 1048579, 51, 0, 1048580, 51, 0, 1048581, 51, 0, 1048582, 51, 0, 1048583, 51, 0, 1048584, 51, 0, 1048594, 63, 0, 1048595, 62, 0, 1179640, 8, 0, 1114121, 8, 0, 1114130, 63, 0, 1114131, 62, 0, 1245177, 8, 0, 1179658, 1610612769, 0, 1179659, 54, 0, 1179660, 54, 0, 1179661, 1610612769, 0, 1179663, 20, 0, 1179664, 20, 0, 1179666, 63, 0, 1179667, 62, 0, 1310714, 8, 0, 1310715, 8, 0, 1376252, 536870937, 0, 1376253, 536870920, 0, 1376254, 536870920, 0, 1376255, 536870920, 0, 1310720, 536870920, 0, 1310721, 536870920, 0, 1310722, 536870920, 0, 1310723, 536870920, 0, 1310724, 536870920, 0, 1310725, 536870935, 0, 1376262, 7, 0, 1376295, 64, 0, 1376296, 64, 0, 1376297, 64, 0, 1376298, 64, 0, 1376299, 64, 0, 1376300, 64, 0, 1376301, 64, 0, 1376302, 64, 0, 1441799, 59, 0, 1441800, 59, 0, 1441801, 59, 0, 1507335, 52, 0, 1507336, 52, 0, 1507337, 52, 0, 1507338, 18, 0, 1507339, 1073741876, 0, 1572875, 18, 0, 1572882, 18, 0, 1572883, 18, 0, 1572884, 18, 0, 1572906, 64, 0, 1572907, 64, 0, 1638412, 18, 0, 1638413, 18, 0, 1638442, 64, 0, 1638443, 64, 0, 1638456, 61, 0, 1638457, 61, 0, 1638458, 61, 0, 1638459, 61, 0, 1703950, 18, 0, 1703951, 20, 0, 1703952, 20, 0, 1703975, 64, 0, 1703976, 64, 0, 1703977, 64, 0, 1703978, 64, 0, 1703979, 64, 0, 1703980, 64, 0, 1703981, 64, 0, 1703982, 64, 0, 1703991, 61, 0, 1769496, 18, 0, 1769497, 18, 0, 1769505, 20, 0, 1769506, 20, 0, 1769507, 20, 0, 1769508, 20, 0, 1769526, 61, 0, 1835028, 18, 0, 1835029, 18, 0, 1835035, 20, 0, 1835036, 20, 0, 1835037, 20, 0, 1835061, 61, 0, 1966070, 536870925, 0, 1966071, 536870920, 0, 1966072, 536870920, 0, 1966073, 536870920, 0, 1966074, 536870920, 0, 1966075, 536870920, 0, 1966076, 536870924, 0, 1966079, 11, 0, 1900544, 7, 0, 1900545, 7, 0, 1900546, 29, 0, 1900574, 59, 0, 1900596, 61, 0, 2031605, 536870925, 0, 2031606, 536870971, 0, 2031607, 536870971, 0, 2031608, 536870971, 0, 2031609, 536870971, 0, 2031610, 536870971, 0, 2031611, 536870971, 0, 2031612, 536870971, 0, 2031613, 536870924, 0, 1966084, 23, 0, 1966085, 25, 0, 1966096, 23, 0, 1966097, 25, 0, 1966111, 59, 0, 1966117, 61, 0, 1966118, 61, 0, 1966119, 61, 0, 1966120, 61, 0, 1966131, 61, 0, 2097140, 536870925, 0, 2097141, 536870936, 0, 2097142, 536870936, 0, 2097143, 536870936, 0, 2097144, 536870936, 0, 2097145, 536870936, 0, 2097146, 536870936, 0, 2097147, 536870936, 0, 2097148, 536870936, 0, 2097149, 536870936, 0, 2097150, 536870924, 0, 2031652, 61, 0, 2031657, 61, 0, 2031658, 61, 0, 2031666, 61, 0, 2097187, 61, 0, 2097195, 61, 0, 2097201, 61, 0, 2162720, 61, 0, 2162721, 61, 0, 2162722, 61, 0, 2162732, 61, 0, 2162733, 61, 0, 2162734, 61, 0, 2162735, 61, 0 )
+
+[node name="Wall" type="CollisionShape2D" parent="."]
+position = Vector2( -512, 480 )
+shape = SubResource( 5 )
+
+[node name="Wall2" type="CollisionShape2D" parent="."]
+position = Vector2( 1920, 480 )
+shape = SubResource( 5 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( -192, 354 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+
+[node name="Pies" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1856, 783 )
+scale = Vector2( 1.625, 1.74545 )
+
+[node name="Pies2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 512, 558 )
+scale = Vector2( 1.625, 1.74545 )
+
+[node name="Pies3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1391, 302 )
+scale = Vector2( 1.625, 1.74545 )
+
+[node name="MovingWallSlide" type="KinematicBody2D" parent="."]
+position = Vector2( 320, 1024 )
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_group_": true
+}
+move_direction = Vector2( 1, 0 )
+
+[node name="Sprite" type="Sprite" parent="MovingWallSlide"]
+position = Vector2( 24, 0 )
+scale = Vector2( 2.5, 1 )
+texture = ExtResource( 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingWallSlide"]
+visible = false
+position = Vector2( 24, -8.25 )
+shape = SubResource( 6 )
+
+[node name="MovingWallUpDown" type="KinematicBody2D" parent="."]
+position = Vector2( 704, 590 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+move_speed = 0.3
+
+[node name="Sprite" type="Sprite" parent="MovingWallUpDown"]
+position = Vector2( 0, 18 )
+scale = Vector2( 2, 1 )
+texture = ExtResource( 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingWallUpDown"]
+position = Vector2( 0, 5 )
+shape = SubResource( 7 )
+
+[node name="Person" type="Area2D" parent="."]
+position = Vector2( 1632, 444 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Person"]
+position = Vector2( -5.01777, -8.78634 )
+scale = Vector2( 0.253547, 0.269797 )
+texture = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Person"]
+visible = false
+shape = SubResource( 8 )
+
+[node name="StoryBox" parent="Person" instance=ExtResource( 10 )]
+visible = false
+margin_left = -275.0
+margin_top = 44.0
+margin_right = 354.0
+margin_bottom = 300.0
+story_line_file = "res://story/story1.txt"
+person = ExtResource( 12 )
+
+[node name="Sprite2" type="Sprite" parent="Person/StoryBox"]
+position = Vector2( 568.062, 71.1409 )
+scale = Vector2( 0.389985, 0.390717 )
+texture = ExtResource( 12 )
+
+[node name="Snow" type="Particles2D" parent="."]
+material = SubResource( 9 )
+position = Vector2( 550, 268 )
+scale = Vector2( 2, 2 )
+amount = 2
+process_material = SubResource( 10 )
+texture = ExtResource( 9 )
+
+[node name="MoveE" parent="." instance=ExtResource( 17 )]
+position = Vector2( -64, 608 )
+
+[node name="MoveE2" parent="." instance=ExtResource( 17 )]
+position = Vector2( 96, 448 )
+
+[node name="MoveE3" parent="." instance=ExtResource( 17 )]
+position = Vector2( 512, 352 )
+
+[node name="MoveE4" parent="." instance=ExtResource( 17 )]
+position = Vector2( 864, 224 )
+
+[node name="MoveE5" parent="." instance=ExtResource( 17 )]
+position = Vector2( 1289, 928 )
+
+[connection signal="body_exited" from="Person" to="Person" method="_on_Person_body_exited"]

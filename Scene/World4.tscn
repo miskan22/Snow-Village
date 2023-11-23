@@ -1,0 +1,295 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://scene/Portal.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scene/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://jpg/game scene 5.jpg" type="Texture" id=3]
+[ext_resource path="res://TileSet.tres" type="TileSet" id=4]
+[ext_resource path="res://music/Helado Village.mp3" type="AudioStream" id=5]
+[ext_resource path="res://png/snow.png" type="Texture" id=6]
+[ext_resource path="res://script/World4.gd" type="Script" id=7]
+[ext_resource path="res://scene/MoveE.tscn" type="PackedScene" id=8]
+[ext_resource path="res://script/MovingWallUpDown.gd" type="Script" id=9]
+[ext_resource path="res://script/MovingWallSlide.gd" type="Script" id=10]
+[ext_resource path="res://Tile/tile_0518.png" type="Texture" id=11]
+[ext_resource path="res://scene/Pies.tscn" type="PackedScene" id=12]
+[ext_resource path="res://png/deers.png" type="Texture" id=14]
+[ext_resource path="res://scene/StoryBox.tscn" type="PackedScene" id=15]
+[ext_resource path="res://script/Deer.gd" type="Script" id=16]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7.625, 500.25 )
+
+[sub_resource type="CanvasItemMaterial" id=2]
+
+[sub_resource type="ParticlesMaterial" id=3]
+emission_shape = 1
+emission_sphere_radius = 100.0
+flag_disable_z = true
+gravity = Vector3( 0, 98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+anim_speed = 0.5
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 40, 8.25 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 32, 3 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 77, 50.5 )
+
+[node name="World4" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( -89, -50 )
+stream = ExtResource( 5 )
+autoplay = true
+
+[node name="Background4" type="Sprite" parent="."]
+position = Vector2( 683, 422.6 )
+scale = Vector2( 2.0525, 2.23917 )
+texture = ExtResource( 3 )
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 0, 448 )
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -983022, 61, 0, -983017, 61, 0, -851972, 58, 0, -851971, 58, 0, -851970, 58, 0, -851969, 58, 0, -917486, 61, 0, -917482, 61, 0, -917481, 61, 0, -917468, 61, 0, -917467, 61, 0, -917466, 61, 0, -917465, 61, 0, -917464, 61, 0, -917463, 61, 0, -917462, 61, 0, -851950, 61, 0, -851947, 61, 0, -851946, 61, 0, -851945, 61, 0, -851926, 61, 0, -786414, 61, 0, -786410, 61, 0, -786409, 61, 0, -786390, 61, 0, -720878, 61, 0, -720877, 61, 0, -720876, 61, 0, -720875, 61, 0, -720874, 61, 0, -720873, 61, 0, -720854, 61, 0, -720853, 61, 0, -720852, 61, 0, -720851, 61, 0, -720850, 61, 0, -524260, 7, 0, -458743, 58, 0, -458742, 58, 0, -458741, 61, 0, -458740, 61, 0, -458724, 7, 0, -458723, 7, 0, -393189, 7, 0, -393188, 7, 0, -393187, 7, 0, -393186, 7, 0, -262148, 7, 0, -262147, 7, 0, -262146, 7, 0, -262145, 7, 0, -327680, 7, 0, -327679, 7, 0, -327678, 7, 0, -327673, 9, 0, -327650, 7, 0, -327649, 7, 0, -327648, 7, 0, -262142, 9, 0, -262138, 9, 0, -262137, 9, 0, -196606, 9, 0, -196603, 9, 0, -196602, 9, 0, -196601, 9, 0, -196584, 58, 0, -196583, 61, 0, -196582, 61, 0, -196581, 61, 0, -196570, 61, 0, -196566, 61, 0, -131070, 9, 0, -131069, 9, 0, -131068, 9, 0, -131067, 9, 0, -131066, 9, 0, -131065, 9, 0, -131044, 61, 0, -131034, 61, 0, -131030, 61, 0, -65514, 58, 0, -65513, 61, 0, -65512, 61, 0, -65508, 61, 0, -65498, 61, 0, -65497, 61, 0, -65496, 61, 0, -65495, 61, 0, -65494, 61, 0, 20, 61, 0, 28, 61, 0, 29, 61, 0, 65555, 61, 0, 65564, 61, 0, 65565, 61, 0, 65566, 61, 0, 65567, 61, 0, 65568, 61, 0, 131075, 61, 0, 131076, 61, 0, 131077, 61, 0, 131078, 61, 0, 131079, 61, 0, 131084, 58, 0, 131090, 58, 0, 196615, 61, 0, 196619, 58, 0, 196621, 58, 0, 196625, 58, 0, 196627, 58, 0, 262151, 61, 0, 262154, 58, 0, 262164, 58, 0, 327687, 61, 0, 327689, 58, 0, 327701, 61, 0, 327705, 61, 0, 327706, 61, 0, 327707, 61, 0, 393223, 61, 0, 524284, 59, 0, 524285, 59, 0, 458755, 59, 0, 458756, 59, 0, 458757, 59, 0, 458758, 58, 0, 458759, 58, 0, 589821, 58, 0, 589822, 58, 0, 655357, 58, 0, 655359, 61, 0, 720893, 58, 0, 720895, 61, 0, 655360, 61, 0, 655361, 61, 0, 786429, 58, 0, 851965, 58, 0, 786474, 59, 0, 917501, 58, 0, 917502, 58, 0, 917503, 58, 0, 851968, 58, 0, 851969, 58, 0, 851970, 58, 0, 851971, 58, 0, 851972, 58, 0, 851973, 58, 0, 851974, 58, 0, 851975, 58, 0, 852010, 59, 0, 983037, 61, 0, 983038, 61, 0, 983039, 61, 0, 917504, 61, 0, 917505, 61, 0, 917506, 61, 0, 917507, 61, 0, 917508, 61, 0, 917509, 61, 0, 917510, 61, 0, 917511, 61, 0, 917528, 59, 0, 917529, 59, 0, 917530, 59, 0, 917531, 59, 0, 917532, 59, 0, 917533, 59, 0, 917534, 59, 0, 917535, 59, 0, 917539, 59, 0, 917540, 59, 0, 917541, 59, 0, 917542, 59, 0, 917543, 59, 0, 917544, 59, 0, 917545, 59, 0, 917546, 59, 0, 983050, 59, 0, 983051, 59, 0, 983052, 59, 0, 983053, 59, 0, 983054, 59, 0, 983055, 59, 0, 983056, 59, 0, 983082, 59, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( -32, -32 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+
+[node name="Portal" parent="." instance=ExtResource( 1 )]
+position = Vector2( -89, -50 )
+next_world = "res://scene/World3.tscn"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -135.625, 385.75 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 1504, 388 )
+shape = SubResource( 1 )
+
+[node name="Snow" type="Particles2D" parent="."]
+material = SubResource( 2 )
+position = Vector2( 544, 256 )
+scale = Vector2( 2, 2 )
+amount = 2
+process_material = SubResource( 3 )
+texture = ExtResource( 6 )
+
+[node name="Portal2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1479, 47 )
+next_world = "res://scene/World5.tscn"
+
+[node name="MovingWallSlide" type="KinematicBody2D" parent="."]
+position = Vector2( 608, 240 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+move_direction = Vector2( 1, 0 )
+
+[node name="Sprite" type="Sprite" parent="MovingWallSlide"]
+position = Vector2( 24, 0 )
+scale = Vector2( 2.5, 1 )
+texture = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingWallSlide"]
+visible = false
+position = Vector2( 24, -8.25 )
+shape = SubResource( 4 )
+
+[node name="MovingWallSlide2" type="KinematicBody2D" parent="."]
+position = Vector2( 288, 842 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+move_direction = Vector2( 1, 0 )
+
+[node name="Sprite" type="Sprite" parent="MovingWallSlide2"]
+position = Vector2( 24, 0 )
+scale = Vector2( 2.5, 1 )
+texture = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingWallSlide2"]
+visible = false
+position = Vector2( 24, -8.25 )
+shape = SubResource( 4 )
+
+[node name="MovingWallSlide3" type="KinematicBody2D" parent="."]
+position = Vector2( 1088, 416 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+move_direction = Vector2( 1, 0 )
+
+[node name="Sprite" type="Sprite" parent="MovingWallSlide3"]
+position = Vector2( 24, 0 )
+scale = Vector2( 2.5, 1 )
+texture = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingWallSlide3"]
+visible = false
+position = Vector2( 24, -8.25 )
+shape = SubResource( 4 )
+
+[node name="MovingWallSlide4" type="KinematicBody2D" parent="."]
+position = Vector2( 896, 16 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+move_direction = Vector2( 1, 0 )
+
+[node name="Sprite" type="Sprite" parent="MovingWallSlide4"]
+position = Vector2( 24, 0 )
+scale = Vector2( 2.5, 1 )
+texture = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingWallSlide4"]
+visible = false
+position = Vector2( 24, -8.25 )
+shape = SubResource( 4 )
+
+[node name="MovingWallUpDown" type="KinematicBody2D" parent="."]
+position = Vector2( 494, 640 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+move_speed = 0.3
+
+[node name="Sprite" type="Sprite" parent="MovingWallUpDown"]
+position = Vector2( 0, 18 )
+scale = Vector2( 2, 1 )
+texture = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingWallUpDown"]
+position = Vector2( 0, 5 )
+shape = SubResource( 5 )
+
+[node name="MovingWallUpDown2" type="KinematicBody2D" parent="."]
+position = Vector2( 736, 704 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+move_speed = 0.3
+
+[node name="Sprite" type="Sprite" parent="MovingWallUpDown2"]
+position = Vector2( 0, 18 )
+scale = Vector2( 2, 1 )
+texture = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingWallUpDown2"]
+position = Vector2( 0, 5 )
+shape = SubResource( 5 )
+
+[node name="MovingWallUpDown3" type="KinematicBody2D" parent="."]
+position = Vector2( 494, 128 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+move_speed = 0.3
+
+[node name="Sprite" type="Sprite" parent="MovingWallUpDown3"]
+position = Vector2( 0, 18 )
+scale = Vector2( 2, 1 )
+texture = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingWallUpDown3"]
+position = Vector2( 0, 5 )
+shape = SubResource( 5 )
+
+[node name="MovingWallUpDown4" type="KinematicBody2D" parent="."]
+position = Vector2( 1120, 237 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+move_speed = 0.3
+
+[node name="Sprite" type="Sprite" parent="MovingWallUpDown4"]
+position = Vector2( 0, 18 )
+scale = Vector2( 2, 1 )
+texture = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingWallUpDown4"]
+position = Vector2( 0, 5 )
+shape = SubResource( 5 )
+
+[node name="Pies" parent="." instance=ExtResource( 12 )]
+position = Vector2( 32, 751 )
+scale = Vector2( 1.625, 1.74545 )
+
+[node name="Pies2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1322, 399 )
+scale = Vector2( 1.625, 1.74545 )
+
+[node name="Pies3" parent="." instance=ExtResource( 12 )]
+position = Vector2( 627, 79 )
+scale = Vector2( 1.625, 1.74545 )
+
+[node name="Deer" type="Area2D" parent="."]
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Deer"]
+position = Vector2( 1256, -46 )
+scale = Vector2( 0.099315, 0.128012 )
+texture = ExtResource( 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deer"]
+visible = false
+position = Vector2( 1257, -50.5 )
+shape = SubResource( 6 )
+
+[node name="StoryBox" parent="Deer" instance=ExtResource( 15 )]
+visible = false
+margin_left = 906.0
+margin_top = 1.0
+margin_right = 1546.0
+margin_bottom = 257.0
+story_line_file = "res://story/story2.txt"
+
+[node name="Sprite" type="Sprite" parent="Deer/StoryBox"]
+position = Vector2( 558, 51 )
+scale = Vector2( 0.092334, 0.119863 )
+texture = ExtResource( 14 )
+
+[node name="MoveE" parent="." instance=ExtResource( 8 )]
+position = Vector2( -96, 256 )
+
+[node name="MoveE2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 192, 640 )
+
+[node name="MoveE3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 96, 832 )
+
+[node name="MoveE4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 800, 864 )
+
+[node name="MoveE5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1248, 866 )
+
+[node name="MoveE6" parent="." instance=ExtResource( 8 )]
+position = Vector2( 823, 320 )
+
+[connection signal="body_exited" from="Deer" to="Deer" method="_on_Deer_body_exited"]

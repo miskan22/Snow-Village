@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Fonts/romulus.tres" type="DynamicFont" id=1]
+[ext_resource path="res://jpg/loading.jpg" type="Texture" id=2]
+[ext_resource path="res://script/Dead.gd" type="Script" id=3]
+
+[node name="Dead" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Background1" type="Sprite" parent="."]
+position = Vector2( 512, 304 )
+scale = Vector2( 0.232727, 0.301139 )
+texture = ExtResource( 2 )
+
+[node name="Again" type="Label" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 403.0
+margin_top = 406.0
+margin_right = 654.0
+margin_bottom = 450.0
+custom_fonts/font = ExtResource( 1 )
+text = "PLAY AGAIN?"
+
+[node name="AgainBtn" type="Button" parent="."]
+show_behind_parent = true
+margin_left = 393.0
+margin_top = 404.0
+margin_right = 656.0
+margin_bottom = 454.0
+custom_fonts/font = ExtResource( 1 )
+text = "PLAY AGAIN?"
+
+[node name="Quit" type="Label" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 475.0
+margin_top = 457.0
+margin_right = 569.0
+margin_bottom = 501.0
+custom_fonts/font = ExtResource( 1 )
+text = "QUIT"
+
+[node name="QuitBtn" type="Button" parent="."]
+show_behind_parent = true
+margin_left = 466.0
+margin_top = 452.0
+margin_right = 572.0
+margin_bottom = 502.0
+custom_fonts/font = ExtResource( 1 )
+text = "QUIT"
+
+[node name="Die" type="Label" parent="."]
+margin_left = 64.0
+margin_top = 173.0
+margin_right = 973.0
+margin_bottom = 217.0
+custom_fonts/font = ExtResource( 1 )
+text = "You have died, would you like to try again?"
+
+[connection signal="pressed" from="AgainBtn" to="." method="_on_AgainBtn_pressed"]
+[connection signal="pressed" from="QuitBtn" to="." method="_on_QuitBtn_pressed"]

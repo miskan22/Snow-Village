@@ -1,0 +1,72 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Dag/Run5.png" type="Texture" id=1]
+[ext_resource path="res://Dag/Fall0.png" type="Texture" id=2]
+[ext_resource path="res://Dag/Run4.png" type="Texture" id=3]
+[ext_resource path="res://Dag/Jump0.png" type="Texture" id=4]
+[ext_resource path="res://Dag/Run0.png" type="Texture" id=5]
+[ext_resource path="res://Idle0.png" type="Texture" id=6]
+[ext_resource path="res://Dag/Run1.png" type="Texture" id=7]
+[ext_resource path="res://Dag/Run2.png" type="Texture" id=8]
+[ext_resource path="res://Dag/Run3.png" type="Texture" id=9]
+[ext_resource path="res://script/Player.gd" type="Script" id=10]
+[ext_resource path="res://Dag/attack.png" type="Texture" id=11]
+[ext_resource path="res://music/breeze-of-blood-122253.mp3" type="AudioStream" id=12]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "Attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 3 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "Run",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 14.0
+height = 44.0
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 512, 288 )
+z_index = 1
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "Fall"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 32, 0 )
+
+[node name="Kill" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 12 )
+
+[node name="Collect" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="animation_finished" from="Sprite" to="." method="_on_Sprite_animation_finished"]
