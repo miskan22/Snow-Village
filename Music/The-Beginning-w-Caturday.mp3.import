@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/The-Beginning-w-Caturday.mp3-4bcf8d924a0d8162d76b8ccb0d0c889e.mp3str"
+
+[deps]
+
+source_file="res://music/The-Beginning-w-Caturday.mp3"
+dest_files=[ "res://.import/The-Beginning-w-Caturday.mp3-4bcf8d924a0d8162d76b8ccb0d0c889e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Helado Village.mp3-453db938a9d2e0c7102f5de668a9e6c2.mp3str"
+
+[deps]
+
+source_file="res://music/Helado Village.mp3"
+dest_files=[ "res://.import/Helado Village.mp3-453db938a9d2e0c7102f5de668a9e6c2.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

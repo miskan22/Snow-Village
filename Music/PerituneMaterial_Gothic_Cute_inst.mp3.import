@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/PerituneMaterial_Gothic_Cute_inst.mp3-d3470cedf4bb95b944329843131c04c2.mp3str"
+
+[deps]
+
+source_file="res://music/PerituneMaterial_Gothic_Cute_inst.mp3"
+dest_files=[ "res://.import/PerituneMaterial_Gothic_Cute_inst.mp3-d3470cedf4bb95b944329843131c04c2.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

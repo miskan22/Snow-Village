@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/雪のテーマ-Snow-field-.mp3-52968221a50f55ea5c7cd62770079df8.mp3str"
+
+[deps]
+
+source_file="res://music/雪のテーマ-Snow-field-.mp3"
+dest_files=[ "res://.import/雪のテーマ-Snow-field-.mp3-52968221a50f55ea5c7cd62770079df8.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
